@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "2e27ad4aeb64c5f5afd5be0288a4a9e2",
+=======
+    "content-hash": "6cadd819a6415b190ae2704ced6e6c8b",
+>>>>>>> 656604f (repo setup)
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -123,6 +127,7 @@
             "time": "2021-08-15T20:50:18+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "composer/package-versions-deprecated",
             "version": "1.11.99.3",
             "source": {
@@ -196,6 +201,8 @@
             "time": "2021-08-17T13:49:14+00:00"
         },
         {
+=======
+>>>>>>> 656604f (repo setup)
             "name": "dflydev/dot-access-data",
             "version": "v3.0.1",
             "source": {
@@ -271,6 +278,7 @@
             "time": "2021-08-13T13:06:58+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "doctrine/cache",
             "version": "2.1.1",
             "source": {
@@ -616,6 +624,8 @@
             "time": "2020-05-29T18:28:51+00:00"
         },
         {
+=======
+>>>>>>> 656604f (repo setup)
             "name": "doctrine/inflector",
             "version": "2.0.3",
             "source": {

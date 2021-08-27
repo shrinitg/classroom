@@ -39,15 +39,15 @@
                       <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="/register">Register</a>
+                      <a class="nav-link" href="{{ url('register') }}">Register</a>
                   </li>
                   @if(Auth::user())
                   <li class="nav-item">
-                      <a class="nav-link" href="/logout">Logout</a>
+                      <a class="nav-link" href="{{ url('logout') }}">Logout</a>
                   </li>
                   @else
                   <li class="nav-item">
-                      <a class="nav-link" href="/login">Login</a>
+                      <a class="nav-link" href="{{ url('login') }}">Login</a>
                   </li>
                   @endif
               </ul>

@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Middleware\AuthStudent;
 use App\Http\Middleware\AuthTeacher;
 use Illuminate\Support\Facades\Auth;
+=======
+
+>>>>>>> 656604f (repo setup)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () { return view('index'); });
 Route::get('/register', function() { return view('register'); });
 Route::get('/login', function() { return view('login'); });
@@ -56,3 +61,8 @@ Route::middleware([AuthTeacher::class])->group(function () {
     Route::get('/teacher/delete/assignment/{id}', [TeacherController::class, 'deleteAssignment']);
 
 });
+=======
+Route::get('/', function () {
+    return view('welcome');
+});
+>>>>>>> 656604f (repo setup)
