@@ -5,7 +5,11 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "2e27ad4aeb64c5f5afd5be0288a4a9e2",
+=======
+    "content-hash": "6cadd819a6415b190ae2704ced6e6c8b",
+>>>>>>> 656604f (repo setup)
 =======
     "content-hash": "6cadd819a6415b190ae2704ced6e6c8b",
 >>>>>>> 656604f (repo setup)
@@ -128,6 +132,7 @@
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "composer/package-versions-deprecated",
             "version": "1.11.99.3",
             "source": {
@@ -201,6 +206,8 @@
             "time": "2021-08-17T13:49:14+00:00"
         },
         {
+=======
+>>>>>>> 656604f (repo setup)
 =======
 >>>>>>> 656604f (repo setup)
             "name": "dflydev/dot-access-data",
@@ -278,6 +285,7 @@
             "time": "2021-08-13T13:06:58+00:00"
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             "name": "doctrine/cache",
             "version": "2.1.1",
@@ -624,6 +632,8 @@
             "time": "2020-05-29T18:28:51+00:00"
         },
         {
+=======
+>>>>>>> 656604f (repo setup)
 =======
 >>>>>>> 656604f (repo setup)
             "name": "doctrine/inflector",

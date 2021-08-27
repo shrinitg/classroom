@@ -20,8 +20,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'username',
         'role',
+=======
+>>>>>>> 656604f (repo setup)
 =======
 >>>>>>> 656604f (repo setup)
         'email',
