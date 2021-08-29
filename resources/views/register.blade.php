@@ -14,7 +14,7 @@
         </div>
     @endif
     @if (session('success'))
-    <div class="alert alert-success">Registration has been done successfully <a href="homepage">Go to Homepage</a></div>
+    <div class="alert alert-success">Registration has been done successfully</div>
     @elseif (session('not_success'))
     <div class="alert alert-danger">Registration can not be done. Please try later</div>
     @endif

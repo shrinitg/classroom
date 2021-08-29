@@ -33,10 +33,9 @@ class GeneralController extends Controller
     public function login(LoginRequest $request) {
         $user = User::where('username', $request->username)->first();
         Auth::login($user);
-        return redirect('homepage')->with('role', $user->role);
-        // if($user->role == 1)
-        //     return redirect('homepage');
-        // elseif($user->role == 2)
-        //     return redirect('homepage');
+        if ($user->role == 1)
+            return redirect('teacher');
+        else if($user->role == 2)
+            return redirect('student');
     }
 }

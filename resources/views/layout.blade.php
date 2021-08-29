@@ -10,6 +10,11 @@
 
     <!-- custom css -->
     <link rel="stylesheet" crossorigin="anonymous" href="{{asset('public/css/login.css')}}">
+    <link rel="stylesheet" crossorigin="anonymous" href="{{asset('public/css/student.css')}}">
+    <link rel="stylesheet" crossorigin="anonymous" href="{{asset('public/css/teacher.css')}}">
+
+    <!-- font aweosme link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,22 +27,27 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="/flipr">Flipr</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
-                </li>
-            </ul>
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="register">Register</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="login">Login</a>
+                  </li>
+                  @if(Auth::user())
+                  <li class="nav-item">
+                      <a class="nav-link" href="logout">Logout</a>
+                  </li>
+                  @endif
+              </ul>
             </div>
         </div>
     </nav>

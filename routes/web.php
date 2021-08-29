@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeneralController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Middleware\AuthStudent;
+use App\Http\Middleware\AuthTeacher;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +25,19 @@ Route::get('/login', function() { return view('login'); });
 Route::post('/register', [GeneralController::class, 'register']);
 Route::post('/login', [GeneralController::class, 'login']);
 
-Route::get('homepage', function() {
-    $role = Auth::user()->role;
-    if($role == 1)
-        return view('teacher.homepage');
-    elseif($role == 2)
-        return view('student.homepage');
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+});
+
+Route::middleware([AuthStudent::class])->group(function () {
+    Route::get('/student', [StudentController:: class, 'index']);
+});
+
+Route::middleware([AuthTeacher::class])->group(function () {
+    Route::get('/teacher', [TeacherController:: class, 'index']);
+    Route::post('/addSubject', [TeacherController::class, 'addSubject']);
+    Route::get('/access/{subjectUuid}', [TeacherController::class, 'access']);
+    Route::get('/delete/{subjectUuid}', [TeacherController::class, 'delete']);
+
 });

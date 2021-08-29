@@ -1,0 +1,21 @@
+.accordion {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+}
+
+h3{
+    font-family: 'Allison', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.join-subject{
+    text-align: right;
+}
+
+.join-subject-button {
+    margin-top: 10px;
+}
