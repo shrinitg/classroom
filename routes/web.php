@@ -37,7 +37,12 @@ Route::middleware([AuthStudent::class])->group(function () {
 Route::middleware([AuthTeacher::class])->group(function () {
     Route::get('/teacher', [TeacherController:: class, 'index']);
     Route::post('/addSubject', [TeacherController::class, 'addSubject']);
-    Route::get('/access/{subjectUuid}', [TeacherController::class, 'access']);
-    Route::get('/delete/{subjectUuid}', [TeacherController::class, 'delete']);
+    Route::get('/teacher/access/{subjectUuid}', [TeacherController::class, 'access']);
+    Route::get('/teacher/delete/{subjectUuid}', [TeacherController::class, 'delete']);
+    Route::get('/teacher/publish/{subjectUuid}', [TeacherController::class, 'publish']);
+
+    Route::post('/teacher/newTest', [TeacherController::class, 'addTest']);
+    Route::post('/teacher/newClass', [TeacherController::class, 'addClass']);
+    Route::post('/teacher/newAssignment', [TeacherController::class, 'addAssignment']);
 
 });

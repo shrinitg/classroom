@@ -1,5 +1,43 @@
 @extends('../layout') @section('content')
 
+    @if(session('subject_added'))
+    <div class="alert alert-success" role="alert">
+        Subject has been added successfully.
+    </div>
+    @elseif(session('subject_not_added'))
+    <div class="alert alert-danger" role="alert">
+        Subject cannot be added. Please try again.
+    </div>
+    @elseif(session('subject_deleted'))
+    <div class="alert alert-success" role="alert">
+        Subject has been deleted successfully.
+    </div>
+    @elseif(session('subject_not_deleted'))
+    <div class="alert alert-danger" role="alert">
+        Subject cannot be deleted. Please try again.
+    </div>
+    @elseif(session('subject_published'))
+    <div class="alert alert-success" role="alert">
+        Subject has been published successfully.
+    </div>
+    @elseif(session('subject_not_published'))
+    <div class="alert alert-danger" role="alert">
+        Subject cannot be published. Please try again.
+    </div>
+    @elseif(session('subject_not_found'))
+    <div class="alert alert-danger" role="alert">
+        Subject does not exist.
+    </div>
+    @elseif ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
 <section class="teacher-main">
     <div class="row">
         <h4>Welcome! {{Auth::user()->name}}</h4>
@@ -25,31 +63,6 @@
             </table>
         </div>
         <div class="col-6">
-            @if(session('subject_added'))
-            <div class="alert alert-success" role="alert">
-                Subject has been added successfully.
-            </div>
-            @elseif(session('subject_not_added'))
-            <div class="alert alert-danger" role="alert">
-                Subject cannot be added. Please try again.
-            </div>
-            @elseif(session('subject_deleted'))
-            <div class="alert alert-success" role="alert">
-                Subject has been deleted successfully.
-            </div>
-            @elseif(session('subject_not_deleted'))
-            <div class="alert alert-danger" role="alert">
-                Subject cannot be deleted. Please try again.
-            </div>
-            @elseif ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
             <h5>Your Subjects</h5>
             <button style="margin-top: -60px; margin-top: -60px; position: absolute; right: 3%; top: 9rem;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSubject">Click here to add</button>
             @if(sizeof($subjects) > 0)
@@ -71,12 +84,12 @@
                                 <th scope="row">{{$key+1}}</th>
                                 <td>{{$subject->name}}</td>
                                 <td>{{$subject->subjectUuid}}</td>
-                                <td><a href="access/{{$subject->subjectUuid}}"><button type="button" class="btn btn-primary btn-sm">Access</button></a></td>
+                                <td><a href="teacher/access/{{$subject->subjectUuid}}"><button type="button" class="btn btn-primary btn-sm">Access</button></a></td>
                                 <td><button type="button" onclick="deleteSubject('{{$subject->subjectUuid}}')" class="btn btn-danger btn-sm">Delete</button></td>
                                 @if($subject->isPublished)
                                 <td><span class="badge bg-success">Published</span></td>
                                 @else
-                                <td><span class="badge bg-danger">Not Published</span></td>
+                                <td><button class="btn btn-primary btn-sm" onclick="publishSubject('{{$subject->subjectUuid}}')">Publish</button></td>
                                 @endif
                             </tr>
                         @endforeach
@@ -117,8 +130,13 @@
 
 <script>
     function deleteSubject(subjectuuid) {
-    if(confirm("Do you confirm to delete this subject?"))
-        window.location.href = "delete/"+subjectuuid;
+        if(confirm("Do you confirm to delete this subject?"))
+            window.location.href = "teacher/delete/"+subjectuuid;
+    }
+
+    function publishSubject(subjectuuid) {
+        if(confirm("Do you confirm to publish this subject?"))
+            window.location.href = "teacher/publish/"+subjectuuid;
     }
 </script>
 
