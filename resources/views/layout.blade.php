@@ -42,11 +42,11 @@
                   </li>
                   @if(Auth::user())
                   <li class="nav-item">
-                      <a class="nav-link" href="/login">Logout</a>
+                      <a class="nav-link" href="/logout">Logout</a>
                   </li>
                   @else
                   <li class="nav-item">
-                      <a class="nav-link" href="/logout">Login</a>
+                      <a class="nav-link" href="/login">Login</a>
                   </li>
                   @endif
               </ul>
