@@ -1,5 +1,35 @@
 @extends('../layout') @section('content')
 
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @elseif(session('subject_added'))
+    <div class="alert alert-success" role="alert">
+        Subject has been added to your list successfully.
+    </div>
+    @elseif(session('subject_not_added'))
+    <div class="alert alert-danger" role="alert">
+        Subject cannot be added. Please try again.
+    </div>
+    @elseif(session('subject_unsubscribed'))
+    <div class="alert alert-success" role="alert">
+        Subject has been unsubscribed from your list successfully.
+    </div>
+    @elseif(session('subject_not_unsubscribed'))
+    <div class="alert alert-danger" role="alert">
+        Subject cannot be unsubscribed. Please try again.
+    </div>
+    @elseif(session('subject_not_found'))
+    <div class="alert alert-danger" role="alert">
+        Subject does not exist.
+    </div>
+    @endif
+
     <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="row">
             <div class="col-6">
@@ -11,16 +41,19 @@
                 </button>
             </div>
         </div>
-        @if(sizeof($subjects))
+        @if(sizeof($subjects) > 0)
             @foreach ($subjects as $subject)
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <button style="background-color: red; color: #fff;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{$subject->id}}" aria-expanded="false" aria-controls="flush-collapseOne">
                             {{$subject->name}}
                         </button>
                     </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    <div id="flush-collapseOne{{$subject->id}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <button class="btn btn-primary">Access</button>
+                        <button onclick="unsubscribe('{{$subject->subjectUuid}}')" class="btn btn-danger">Remove</button>
+                    </div>
                     </div>
                 </div>
             @endforeach
@@ -43,14 +76,19 @@
                             <label for="exampleInputSubjectCode" class="form-label">Subject Code</label>
                             <input type="text" class="form-control" id="exampleInputSubjectCode" name="subjectCode" placeholder="Enter Subject Code">
                         </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success">Join</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function unsubscribe(subjectCode) {
+            if(window.confirm('Are you sure you want to unsubscribe this subject?')) {
+                window.location.href = 'student/unsubscribe/'+subjectCode;
+            }
+        }
+    </script>
 
 @endsection

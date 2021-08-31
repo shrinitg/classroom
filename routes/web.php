@@ -32,7 +32,8 @@ Route::get('/logout', function () {
 
 Route::middleware([AuthStudent::class])->group(function () {
     Route::get('/student', [StudentController:: class, 'index']);
-    Route::get('/student/joinSubject', [StudentController:: class, 'joinSubject']);
+    Route::post('/student/joinSubject', [StudentController:: class, 'joinSubject']);
+    Route::get('student/unsubscribe/{subjectUuid}', [StudentController::class, 'unsubscribe']);
 });
 
 Route::middleware([AuthTeacher::class])->group(function () {
