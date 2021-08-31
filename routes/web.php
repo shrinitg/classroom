@@ -32,6 +32,7 @@ Route::get('/logout', function () {
 
 Route::middleware([AuthStudent::class])->group(function () {
     Route::get('/student', [StudentController:: class, 'index']);
+    Route::get('/student/joinSubject', [StudentController:: class, 'joinSubject']);
 });
 
 Route::middleware([AuthTeacher::class])->group(function () {
@@ -44,5 +45,8 @@ Route::middleware([AuthTeacher::class])->group(function () {
     Route::post('/teacher/newTest', [TeacherController::class, 'addTest']);
     Route::post('/teacher/newClass', [TeacherController::class, 'addClass']);
     Route::post('/teacher/newAssignment', [TeacherController::class, 'addAssignment']);
+    Route::get('/teacher/delete/test/{id}', [TeacherController::class, 'deleteTest']);
+    Route::get('/teacher/delete/class/{id}', [TeacherController::class, 'deleteClass']);
+    Route::get('/teacher/delete/assignment/{id}', [TeacherController::class, 'deleteAssignment']);
 
 });

@@ -32,6 +32,30 @@
             <div class="alert alert-danger" role="alert">
                 Assignment cannot be added. Please try again.
             </div>
+        @elseif(session('test_deleted'))
+            <div class="alert alert-success" role="alert">
+                Test has been deleted successfully.
+            </div>
+        @elseif(session('test_not_deleted'))
+            <div class="alert alert-danger" role="alert">
+                Test cannot be deleted. Please try again.
+            </div>
+        @elseif(session('class_deleted'))
+            <div class="alert alert-success" role="alert">
+                Class has been deleted successfully.
+            </div>
+        @elseif(session('class_not_deleted'))
+            <div class="alert alert-danger" role="alert">
+                Class cannot be deleted. Please try again.
+            </div>
+        @elseif(session('assignment_deleted'))
+            <div class="alert alert-success" role="alert">
+                Assignment has been deleted successfully.
+            </div>
+        @elseif(session('assignment_not_deleted'))
+            <div class="alert alert-danger" role="alert">
+                Assignment cannot be deleted. Please try again.
+            </div>
         @endif
 
 <div class="row" style="margin-top: 20px; width: 90%; margin-right: auto; margin-left: auto;">
@@ -45,7 +69,6 @@
                         <th scope="col">Test Name</th>
                         <th scope="col">Test Date</th>
                         <th scope="col">Open</th>
-                        <th scope="col">Update</th>
                         <th scope="col">Delete</th>
                     </tr>
                 </thead>
@@ -57,8 +80,7 @@
                         <td>{{$subjectTest->test_name}}</td>
                         <td>{{$subjectTest->test_date}}</td>
                         <td><a href="{{$subjectTest->test_link}}"><button class="btn btn-primary btn-sm">Open</button></a></td>
-                        <td><button class="btn btn-success btn-sm">Update</button></td>
-                        <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                        <td><button onclick="deleteTest('{{ $subjectTest->id }}')" class="btn btn-danger btn-sm">Delete</button></td>
                     </tr>
                     @endforeach
                     @else
@@ -82,7 +104,6 @@
                         <th scope="col">Class Name</th>
                         <th scope="col">Class Schedule</th>
                         <th scope="col">Open</th>
-                        <th scope="col">Update</th>
                         <th scope="col">Delete</th>
                     </tr>
                 </thead>
@@ -94,8 +115,7 @@
                         <td>{{$subjectClass->class_title}}</td>
                         <td>{{$subjectClass->class_date}}</td>
                         <td><a href="{{$subjectClass->class_link}}"><button class="btn btn-primary btn-sm">Open</button></a></td>
-                        <td><button class="btn btn-success btn-sm">Update</button></td>
-                        <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                        <td><button onclick="deleteClass('{{ $subjectClass->id }}')" class="btn btn-danger btn-sm">Delete</button></td>
                     </tr>
                     @endforeach
                     @else
@@ -118,8 +138,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Assignment Name</th>
                         <th scope="col">Assignment due date</th>
-                        <th scope="col">Copy Link</th>
-                        <th scope="col">Update</th>
+                        <th scope="col">Open</th>
                         <th scope="col">Delete</th>
                     </tr>
                 </thead>
@@ -131,8 +150,7 @@
                         <td>{{$subjectAssign->assignment_title}}</td>
                         <td>{{$subjectAssign->assignment_date}}</td>
                         <td><a href="{{$subjectAssign->assignment_link}}"><button class="btn btn-primary btn-sm">Open</button></a></td>
-                        <td><button class="btn btn-success btn-sm">Update</button></td>
-                        <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                        <td><button onclick="deleteAssignment('{{ $subjectAssign->id }}')" class="btn btn-danger btn-sm">Delete</button></td>
                     </tr>
                     @endforeach
                     @else
@@ -235,5 +253,23 @@
     </div>
   </div>
 </div>
+
+<script>
+    function deleteTest(id) {
+        if(confirm("Do you confirm to delete this test?"))
+            window.location.href = "/flipr/teacher/delete/test/"+id;
+    }
+
+    function deleteClass(id) {
+        if(confirm("Do you confirm to delete this class?"))
+            window.location.href = "/flipr/teacher/delete/class/"+id;
+    }
+
+    function deleteAssignment(id) {
+        if(confirm("Do you confirm to delete this assignment?"))
+            window.location.href = "/flipr/teacher/delete/assignment/"+id;
+    }
+
+</script>
 
 @endsection

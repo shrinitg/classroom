@@ -147,4 +147,30 @@ class TeacherController extends Controller
                 return redirect('teacher')->with('subject_not_published', 'Subject can not be published');
         return redirect('teacher')->with('subject_not_found', 'Subject code is invalid');
     }
+
+    public function deleteTest($id) {
+        $test = SubjectTest::find($id);
+        $subject_code = $test->subjectUuid;
+        if($test && $test->delete())
+            return redirect('/teacher/access/'.$subject_code)->with('test_deleted', 'Test has been deleted');
+        return redirect('/teacher/access/'.$subject_code)->with('test_not_deleted', 'Test can not be deleted');
+    }
+
+    public function deleteClass($id) {
+        $class = SubjectClass::find($id);
+        $subject_code = $class->subjectUuid;
+        if($class && $class->delete())
+            return redirect('/teacher/access/'.$subject_code)->with('class_deleted', 'Class has been deleted');
+        return redirect('/teacher/access/'.$subject_code)->with('class_not_deleted', 'Class can not be deleted');
+    }
+
+    public function deleteAssignment($id) {
+        $assign = SubjectAssign::find($id);
+        $subject_code = $assign->subjectUuid;
+        if($assign && $assign->delete())
+            return redirect('/teacher/access/'.$subject_code)->with('assignment_deleted', 'Assignment has been deleted');
+        return redirect('/teacher/access/'.$subject_code)->with('assignment_not_deleted', 'Assignment can not be deleted');
+    }
+
+
 }

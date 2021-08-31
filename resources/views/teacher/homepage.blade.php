@@ -52,12 +52,10 @@
                     <tr>
                         <th scope="row">Username</th>
                         <td>{{Auth::user()->username}}</td>
-                        <td><button type="button" class="btn btn-primary btn-sm">Update</button></td>
                     </tr>
                     <tr>
                     <th scope="row">Email</th>
                     <td>{{Auth::user()->email}}</td>
-                    <td><button type="button" class="btn btn-primary btn-sm">Update</button></td>
                     </tr>
                 </tbody>
             </table>
