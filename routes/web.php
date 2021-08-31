@@ -34,6 +34,11 @@ Route::middleware([AuthStudent::class])->group(function () {
     Route::get('/student', [StudentController:: class, 'index']);
     Route::post('/student/joinSubject', [StudentController:: class, 'joinSubject']);
     Route::get('student/unsubscribe/{subjectUuid}', [StudentController::class, 'unsubscribe']);
+    Route::get('student/access/{subjectUuid}', [StudentController::class, 'access']);
+    
+    Route::get('/student/access/markTestDone/{id}', [StudentController::class, 'markTestDone']);
+    Route::get('/student/access/markClassDone/{id}', [StudentController::class, 'markClassDone']);
+    Route::get('/student/access/markAssignDone/{id}', [StudentController::class, 'markAssignDone']);
 });
 
 Route::middleware([AuthTeacher::class])->group(function () {

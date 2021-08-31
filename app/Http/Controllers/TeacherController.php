@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AssignDone;
+use App\Models\ClassDone;
 use App\Models\StudentSubject;
 use App\Models\Subject;
 use App\Models\SubjectAssign;
@@ -9,6 +11,7 @@ use App\Models\SubjectClass;
 use App\Models\SubjectTest;
 use Illuminate\Http\Request;
 use App\Models\TeacherSubject;
+use App\Models\TestDone;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
@@ -151,24 +154,30 @@ class TeacherController extends Controller
     public function deleteTest($id) {
         $test = SubjectTest::find($id);
         $subject_code = $test->subjectUuid;
-        if($test && $test->delete())
+        if($test && $test->delete()) {
+            $deleteTestRelation = TestDone::where('testId', $id)->delete();
             return redirect('/teacher/access/'.$subject_code)->with('test_deleted', 'Test has been deleted');
+        }
         return redirect('/teacher/access/'.$subject_code)->with('test_not_deleted', 'Test can not be deleted');
     }
 
     public function deleteClass($id) {
         $class = SubjectClass::find($id);
         $subject_code = $class->subjectUuid;
-        if($class && $class->delete())
+        if($class && $class->delete()) {
+            $deleteClassRelation = ClassDone::where('classId', $id)->delete();
             return redirect('/teacher/access/'.$subject_code)->with('class_deleted', 'Class has been deleted');
+        }
         return redirect('/teacher/access/'.$subject_code)->with('class_not_deleted', 'Class can not be deleted');
     }
 
     public function deleteAssignment($id) {
         $assign = SubjectAssign::find($id);
         $subject_code = $assign->subjectUuid;
-        if($assign && $assign->delete())
+        if($assign && $assign->delete()) {
+            $deleteAssignRelation = AssignDone::where('assignId', $id)->delete();
             return redirect('/teacher/access/'.$subject_code)->with('assignment_deleted', 'Assignment has been deleted');
+        }
         return redirect('/teacher/access/'.$subject_code)->with('assignment_not_deleted', 'Assignment can not be deleted');
     }
 

@@ -51,7 +51,7 @@
                     </h2>
                     <div id="flush-collapseOne{{$subject->id}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        <button class="btn btn-primary">Access</button>
+                        <a href="student/access/{{$subject->subjectUuid}}"><button class="btn btn-primary">Access</button></a>
                         <button onclick="unsubscribe('{{$subject->subjectUuid}}')" class="btn btn-danger">Remove</button>
                     </div>
                     </div>
