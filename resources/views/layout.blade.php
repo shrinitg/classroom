@@ -28,7 +28,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/flipr">Flipr</a>
+            <a class="navbar-brand" href="/">Flipr</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,15 +38,15 @@
                       <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="{{ url('register') }}">Register</a>
+                      <a class="nav-link" href="/register">Register</a>
                   </li>
                   @if(Auth::user())
                   <li class="nav-item">
-                      <a class="nav-link" href="{{ url('logout') }}">Logout</a>
+                      <a class="nav-link" href="/login">Logout</a>
                   </li>
                   @else
                   <li class="nav-item">
-                      <a class="nav-link" href="{{ url('login') }}">Login</a>
+                      <a class="nav-link" href="/logout">Login</a>
                   </li>
                   @endif
               </ul>
