@@ -1,0 +1,467 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+html, body {
+  padding: 0;
+  margin: 0; }
+
+body:not(.modal-open) {
+  padding-right: 0px !important; }
+
+  .achievement {
+    margin-top: 7rem;
+    margin-bottom: 7rem; }
+    .achievement .container-xl .row {
+      position: relative; }
+      .achievement .container-xl .row .disappear_till_break {
+        display: none; }
+      .achievement .container-xl .row img {
+        border-radius: 10px;
+        position: inherit;
+        height: 12rem;
+        width: 12rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .achievement .container-xl .row .achievement_content .card {
+        border: none; }
+        .achievement .container-xl .row .achievement_content .card .card-body .card-title {
+          text-align: center;
+          text-transform: uppercase; }
+        .achievement .container-xl .row .achievement_content .card .card-body .card-text #more2 {
+          display: none; }
+
+          .about {
+            margin-top: 7rem;
+            margin-bottom: 7rem; }
+            .about .container-xl .row {
+              position: relative; }
+              .about .container-xl .row img {
+                border-radius: 10px;
+                position: inherit;
+                height: 12rem;
+                width: 75%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); }
+              .about .container-xl .row .about_content .card {
+                border: none; }
+                .about .container-xl .row .about_content .card .card-body .card-title {
+                  text-align: center;
+                  text-transform: uppercase; }
+                .about .container-xl .row .about_content .card .card-body .card-text #more {
+                  display: none; }
+
+          @media only screen and (max-width: 576px) {
+            .about .container-xl .row .about_content .card {
+              margin-top: 2rem; }
+            .achievement .container-xl .row .disappear_till_break {
+              display: block;
+              margin-top: -4rem;
+              margin-bottom: 7rem; }
+            .achievement .container-xl .row .disappear_after_break {
+              display: none; }
+            .achievement .container-xl .row .achievement_content .card {
+              margin-top: -4rem; }
+            .highlights .container-xl .row .about_sir_div .about_sir {
+              margin-top: 5rem; }
+            .highlights .container-xl .row .highlight_content {
+              margin-top: 15rem; }
+            .footer .container-xl .copyright p {
+              margin-top: 1rem; } }
+          
+
+#image {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; }
+
+.header {
+  position: relative; }
+  .header .background_image {
+    background-image: url("../images/abc.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    height: 40rem;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    background-color: black; }
+  .header .layer {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40rem; }
+  .header .text-effect .typewriter {
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .header .text-effect .typewriter .typewriter-text {
+      color: #ffe509;
+      border-right: solid #ffe509 7px;
+      text-transform: uppercase;
+      animation: cursor 1s ease-in-out infinite;
+      font-weight: bold; }
+
+@keyframes cursor {
+  from {
+    border-color: #ffe509; }
+  to {
+    border-color: transparent; } }
+
+.navigation .navbar .navbar-brand img {
+  height: 3rem;
+  width: 6rem; }
+
+
+
+
+
+.highlights {
+  margin-top: 7rem;
+  margin-bottom: 7rem; }
+  .highlights .container-xl .row {
+    position: relative; }
+    .highlights .container-xl .row .about_sir_div .about_sir {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .highlights .container-xl .row .about_sir_div .about_sir img {
+        border-radius: 10px;
+        height: 12rem;
+        width: 100%; }
+      .highlights .container-xl .row .about_sir_div .about_sir p {
+        text-align: center;
+        margin-top: 1rem; }
+    .highlights .container-xl .row .highlight_content .card {
+      border: none; }
+      .highlights .container-xl .row .highlight_content .card .card-body .card-title {
+        text-align: center;
+        text-transform: uppercase; }
+      .highlights .container-xl .row .highlight_content .card .card-body .card-text {
+        text-align: left; }
+
+.pre_coordinators {
+  margin-top: 7rem;
+  margin-bottom: 7rem; }
+  .pre_coordinators .container-xl .card-title {
+    text-transform: uppercase;
+    text-align: center; }
+  .pre_coordinators .container-xl .row .col-lg-2 .images img {
+    height: 12rem;
+    width: 100%;
+    border-radius: 10px; }
+  .pre_coordinators .container-xl .row .col-lg-2 .images p {
+    text-align: center;
+    margin-top: 1rem; }
+
+.footer {
+  margin-top: 7rem;
+  background-color: #FFDE9B; }
+  .footer .container-xl .row .map iframe {
+    padding-top: 2rem;
+    width: 100%;
+    height: 20rem;
+    top: 50%;
+    left: 50%; }
+  .footer .container-xl .row .address h5 {
+    padding-top: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Acme', sans-serif; }
+  .footer .container-xl .row .address .social-links {
+    padding-left: 2rem;
+    font-weight: bold;
+    margin-bottom: 4rem; }
+    .footer .container-xl .row .address .social-links a {
+      color: #000; }
+  .footer .container-xl .copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    height: 8rem; }
+    .footer .container-xl .copyright h6 {
+      font-weight: bold;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .footer .container-xl .copyright p {
+      position: absolute;
+      top: 62%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+
+.members .container-xl .row .col-lg-3 .card {
+  border: none;
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+  .members .container-xl .row .col-lg-3 .card .card-img-top {
+    height: 12rem; }
+  .members .container-xl .row .col-lg-3 .card .card-body .card-title {
+    text-align: center; }
+  .members .container-xl .row .col-lg-3 .card .card-body button {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute; }
+
+.alumni .container-xl .row .col-lg-3 .card {
+  border: none;
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+  .alumni .container-xl .row .col-lg-3 .card .card-img-top {
+    height: 12rem; }
+  .alumni .container-xl .row .col-lg-3 .card .card-body .card-title {
+    text-align: center; }
+  .alumni .container-xl .row .col-lg-3 .card .card-body button {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute; }
+
+.registration_form input, .registration_form select {
+  margin-top: -2rem;
+  margin-left: 2rem; }
+
+.registration_form ::placeholder {
+  color: #000; }
+
+.registration_form ::placeholder:hover {
+  color: #fff; }
+
+.registration_form input[type=text] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.registration_form input[type=number] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.registration_form input[type=email] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.registration_form input[type=select] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.registration_form input[type=file] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.registration_form input[type=password] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.registration_form input[type=text]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.registration_form input[type=number]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.registration_form input[type=email]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.registration_form input[type=select]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.registration_form input[type=password]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.registration_form form {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.registration_form .form-group {
+  padding-bottom: 2rem; }
+  .registration_form .form-group p {
+    margin-left: 2.1rem; }
+
+.registration_form #passout {
+  display: none; }
+
+.login_form input, .login_form select {
+  margin-top: -2rem;
+  margin-left: 2rem; }
+
+.login_form ::placeholder {
+  color: #000; }
+
+.login_form ::placeholder:hover {
+  color: #fff; }
+
+.login_form input[type=text] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.login_form input[type=number] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.login_form input[type=email] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.login_form input[type=select] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #000; }
+
+.login_form input[type=file] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.login_form input[type=password] {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
+.login_form input[type=text]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.login_form input[type=number]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.login_form input[type=email]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.login_form input[type=select]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.login_form input[type=password]:hover {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #41b7e6; }
+
+.login_form form {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.login_form .form-group {
+  padding-bottom: 2rem; }
+
+.profile {
+  padding-top: 2rem; }
+  .profile .container-xl .upper_links {
+    text-align: center;
+    overflow-x: auto;
+    width: 100%;
+    white-space: nowrap;
+    margin-bottom: 2rem; }
+    .profile .container-xl .upper_links .btn {
+      border-bottom: 2px solid black; }
+      .profile .container-xl .upper_links .btn:focus {
+        background-color: #000;
+        color: #fff; }
+    .profile .container-xl .upper_links .dropdown {
+      display: contents; }
+    .profile .container-xl .upper_links .dropdown-menu {
+      margin-top: 2.5rem; }
+  .profile .container-xl .my_details {
+    margin-top: 2rem; }
+    .profile .container-xl .my_details .row {
+      position: relative; }
+      .profile .container-xl .my_details .row .my_profile_pic img {
+        height: 12rem;
+        width: 50%;
+        position: absolute;
+        left: 50%;
+        top: 35%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px; }
+      .profile .container-xl .my_details .row .my_profile_pic form {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .profile .container-xl .my_details .row table button {
+        float: right; }
+  .profile .container-xl .meeting_register {
+    display: none; }
+    .profile .container-xl .meeting_register table {
+      text-align: center; }
+  .profile .container-xl .schedule_meeting {
+    display: none; }
+    .profile .container-xl .schedule_meeting #presentmembers {
+      height: 15rem; }
+  .profile .container-xl #add_members_div {
+    display: none; }
+  .profile .container-xl .add_projects {
+    display: none; }
+  .profile .container-xl .remove_projects {
+    display: none; }
+  .profile .container-xl .add_photos {
+    display: none; }
+  .profile .container-xl .remove_photos {
+    display: none; }
+  .profile .container-xl .add_notice {
+    display: none; }
+  .profile .container-xl .remove_notice {
+    display: none; }
+
+.remove_existing_members .container-xl {
+  margin-top: 2rem; }
+
+@media only screen and (max-width: 768px) {
+  .profile .container-xl .upper_links {
+    margin-bottom: 8rem; }
+  .profile .container-xl .my_details .col-md-4 form {
+    margin-top: 9rem; }
+  .profile .container-xl .my_details .col-md-8 {
+    margin-top: 14rem; } }
+
+
+@media only screen and (max-width: 386px) {
+  .footer .container-xl .copyright p {
+    margin-top: 2rem; } }
