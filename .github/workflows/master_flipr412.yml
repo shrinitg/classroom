@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
   # More GitHub Actions for Azure: https://github.com/Azure/actions
   
-  name: Build and deploy PHP app to Azure Web App - flipr-classroom
+  name: Build and deploy PHP app to Azure Web App - flipr412
   
   on:
     push:
@@ -54,7 +54,7 @@
           uses: azure/webapps-deploy@v2
           id: deploy-to-webapp
           with:
-            app-name: 'flipr-classroom'
+            app-name: 'flipr412'
             slot-name: 'production'
-            publish-profile: ${{ secrets.AzureAppService_PublishProfile_3706c82fcf5a485299be64b6efc96530 }}
+            publish-profile: ${{ secrets.AzureAppService_PublishProfile_8bfb8a3767cf442592de1d54bea86377 }}
             package: .
