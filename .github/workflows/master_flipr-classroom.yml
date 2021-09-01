@@ -56,5 +56,5 @@
           with:
             app-name: 'flipr-classroom'
             slot-name: 'production'
-            publish-profile: ${{ secrets.AzureAppService_PublishProfile_d5bd9250cb3f46fcba6bf38a7edb117c }}
+            publish-profile: ${{ secrets.AzureAppService_PublishProfile_3706c82fcf5a485299be64b6efc96530 }}
             package: .
